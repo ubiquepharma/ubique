@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
+import { FaLock, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { IoReload } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const login = () => {
   const [emailorphone, setEmailorphone] = useState("");

@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 
 import Banner from "@/components/global/Banner";
 import ProductPageSection from "@/components/products/ProductPageSection";
@@ -78,21 +79,21 @@ async function getData(page = 1) {
     const categories = category.map((cat) => cat.category);
     const res1 = await axios.get(`${process.env.API_URL}/product?page=${page}`);
     const pageData = res1.data.pagination;
-    async function getProducts() {
-      const result = {};
+     async function getProducts() {
+     const result = {};
 
-      for (const cat of categories) {
-        const response = await axios.get(
-          `${process.env.API_URL}/product?category=${cat}&page=${page}&limit=8`
-        );
+     for (const cat of categories) {
+       const response = await axios.get(
+         `${process.env.API_URL}/product?category=${cat}&limit=6`
+       );
 
-        result[cat] = response.data.data;
-      }
+       result[cat] = response.data.data;
+     }
 
-      return result;
-    }
+     return result;
+   }
 
-    const data = await getProducts();
+    const data = await getProducts()
     return {
       products: data,
       pageData,

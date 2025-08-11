@@ -3,14 +3,6 @@ import ProductDetails from "@/components/products/ProductDetails";
 import MainTemplate from "@/templates/MainTemplate";
 import axios from "axios";
 
-export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const product = await getData(id);
-  return {
-    title: `${product.brand} | Ubique Pharma | Leading Pharmaceutical Company in India | Quality Medicines & Healthcare`,
-  };
-}
-
 export default async function ProductDetailsPage({ params }) {
   const { id } = await params;
   const product = await getData(id);

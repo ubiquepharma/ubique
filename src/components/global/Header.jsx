@@ -56,7 +56,7 @@ const Header = ({ products }) => {
     { name: "Investor", path: "/investor" },
     {
       name: "Gallery",
-      path: "/gallery",
+      path: "/",
       dropdown: [
         { name: "Visual Aid", path: "/gallery/ads" },
         {

@@ -98,26 +98,31 @@ const ProductDetails = ({ product }) => {
               <p>
                 <span className="text-defined-green font-bold">
                   ₹{product?.mrp}
-                </span>
+                </span>{" "}
+                / 1 piece(s)
               </p>
-              <p>{product?.moq} (MOQ)</p>
+              <p>{product?.moq} Piece(s) (MOQ)</p>
             </div>
 
-            <div className="border grid grid-cols-1 place-items-stretch justify-between justify-items-stretch">
-              {content.map((item, index) => (
-                <div
-                  key={index}
-                  className="border flex-1 flex flex-col lg:flex-row"
-                >
-                  <h1 className="text-defined-brown text-xl font-semibold border-r p-0.5 basis-full lg:basis-1/2">
-                    {item.title}
-                  </h1>
-                  <p className="text-defined-brown text-xl border-l p-0.5 basis-full lg:basis-1/2">{item.desc}</p>
-                </div>
-              ))}
+            <div className="w-full h-full border flex flex-wrap">
+              <div className="w-full md:w-1/2 lg:w-[40%] border">
+                {content.map((item, index) => (
+                  <div key={index} className="border p-2">
+                    <h1 className="text-defined-brown text-xl font-semibold">
+                      {item.title}
+                    </h1>
+                  </div>
+                ))}
+              </div>
+
+              <div className="w-full md:w-1/2 lg:w-[60%] border">
+                {content.map((item, index) => (
+                  <div key={index} className="border p-2">
+                    <p className="text-defined-brown text-xl">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            {/* <div className="w-full h-full border ">
-            </div> */}
 
             <div className="flex text-lg">
               <p className="w-1/2">Medicine Type</p>

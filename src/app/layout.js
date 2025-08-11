@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import "./globals.css";
 import { ProductProvider } from "../store/ProductStore";
 
