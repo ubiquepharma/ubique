@@ -33,7 +33,7 @@ const Banner = () => {
     title = mfgTitles[facility] || "Mfg. Facility";
   }
 
-  if (pathname.startsWith("/gallery")) {
+  if (pathname.startsWith("/our-gallery")) {
     const id = pathname.split("/")[2];
     title = galleryTitles[id] || "Gallery";
   }

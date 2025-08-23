@@ -9,7 +9,7 @@ import Link from "next/link";
 const ContactUsSection = () => {
   const [rightSideHeight, leftSideRef] = useElementHeight();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,16 +21,16 @@ const ContactUsSection = () => {
       !formData.message
     ) {
       alert("Please fill all the fields");
-      return
+      return;
     }
 
     if (formData.mobile.length !== 10) {
       alert("Please enter a valid mobile number");
-      return
+      return;
     }
 
     const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-    
+
     let message = `*Name:* ${formData.name}
     *Mobile:* ${formData.mobile}
     *Enquiry:* ${formData.enquiry}
@@ -39,12 +39,12 @@ const ContactUsSection = () => {
     message = encodeURIComponent(message);
 
     const dest = "+918617501527";
-   const baseUrl = isMobile
-     ? "https://api.whatsapp.com/send"
-     : "https://web.whatsapp.com/send";
+    const baseUrl = isMobile
+      ? "https://api.whatsapp.com/send"
+      : "https://web.whatsapp.com/send";
 
-   const url = `${baseUrl}?phone=${dest}&text=${message}`;
-   window.open(url, "_blank").focus();
+    const url = `${baseUrl}?phone=${dest}&text=${message}`;
+    window.open(url, "_blank").focus();
   };
 
   useEffect(() => {
@@ -85,7 +85,11 @@ const ContactUsSection = () => {
                 <div className="flex items-center gap-2">
                   <FaMobile className="text-defined-orange" />
                   <Link href={"tel:918617501527"}>
-                    <span>+91 86175 01527, 0356 1358188</span>
+                    <span>+91 86175 01527</span>
+                  </Link>
+                  <span>,</span>
+                  <Link href={"tel:03561358188"}>
+                    <span>0356 1358188</span>
                   </Link>
                 </div>
                 <div className="flex items-center gap-2">

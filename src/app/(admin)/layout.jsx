@@ -11,7 +11,7 @@ const AdminLayout = async ({ children }) => {
 
   return (
     <div className="flex">
-      *<AdminSideHeader />
+      <AdminSideHeader />
       {children}
     </div>
   );
