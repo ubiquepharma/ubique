@@ -8,7 +8,7 @@ const ProdCatCard = ({ product, toggleBookingModal }) => {
 
   const handleViewMore = () => {
     sessionStorage.setItem("selectedProduct", JSON.stringify(product));
-    router.push(`/products/${product.productId}`);
+    router.push(`/our-products/${product.productId}`);
   };
 
   return (

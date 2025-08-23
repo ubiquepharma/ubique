@@ -11,7 +11,7 @@ const ProductPageCard = ({ product }) => {
 
   const handleViewMore = () => {
     sessionStorage.setItem("selectedProduct", JSON.stringify(product));
-    router.push(`/products/${product.productId}`);
+    router.push(`/our-products/${product.productId}`);
   };
   const toggleBookingModal = () => {
     setIsModalOpen((prev) => !prev);

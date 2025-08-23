@@ -41,6 +41,7 @@ const login = () => {
       });
       const result = await response.json();
       if (result && response.ok) {
+        console.log("push");
         router.push("/dashboard");
       }
     } catch (error) {

@@ -8,7 +8,6 @@ import axios from "axios";
 
 const MainTemplate = async ({ children }) => {
   const products = await getData();
-  // console.log(products);
   
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">

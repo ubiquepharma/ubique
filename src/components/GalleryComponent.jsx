@@ -1,8 +1,8 @@
-import { useProduct } from '@/store/ProductStore';
-import OurProductCard from './cards/OurProductCard';
+import { useProduct } from "@/store/our-productstore";
+import OurProductCard from "./cards/OurProductCard";
 
 const GalleryComponent = () => {
-  const {products} = useProduct();
+  const { products } = useProduct();
 
   return (
     <section>
@@ -13,6 +13,6 @@ const GalleryComponent = () => {
       </div>
     </section>
   );
-}
+};
 
-export default GalleryComponent
+export default GalleryComponent;

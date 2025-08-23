@@ -243,7 +243,7 @@ const ProductsPage = ({ showSection }) => {
             </div>
             <div className="flex flex-col items-center gap-1 p-6 shadow-lg bg-white rounded-lg w-1/2 h-auto">
               <Link
-                href="/products/manage"
+                href="/our-products/manage"
                 className="flex flex-col gap-2 items-center justify-center"
               >
                 <h1 className="text-3xl font-bold text-gray-700 text-center w-[80%]">

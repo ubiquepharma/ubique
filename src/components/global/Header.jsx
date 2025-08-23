@@ -18,14 +18,12 @@ const Header = ({ products }) => {
   const dropdownRef = useRef(null);
 
   // Extract unique categories dynamically
-  const categories = products
-    ? Object.keys(products)
-    : [];
+  const categories = products ? Object.keys(products) : [];
 
   // Create dropdown items for Products menu
   const productDropdown = categories.map((category) => ({
     name: category.charAt(0).toUpperCase() + category.slice(1), // Capitalize first letter
-    path: "/products?page=1",
+    path: "/our-products?page=1",
     type: category,
   }));
 
@@ -34,7 +32,7 @@ const Header = ({ products }) => {
     { name: "About Us", path: "/about" },
     {
       name: "Products",
-      path: "/products?page=1",
+      path: "/our-products?page=1",
       dropdown: productDropdown,
     },
     {
@@ -58,10 +56,10 @@ const Header = ({ products }) => {
       name: "Gallery",
       path: "/",
       dropdown: [
-        { name: "Visual Aid", path: "/gallery/ads" },
+        { name: "Visual Aid", path: "/our-gallery/ads" },
         {
           name: "Events",
-          path: "/gallery/events",
+          path: "/our-gallery/events",
         },
       ],
     },
@@ -70,7 +68,7 @@ const Header = ({ products }) => {
 
   const handleProductClick = (product) => {
     sessionStorage.setItem("selectedProduct", JSON.stringify(product));
-    router.push(`/products/${product.productId}`);
+    router.push(`/our-products/${product.productId}`);
   };
 
   const toggleMenu = () => {
@@ -174,18 +172,18 @@ const Header = ({ products }) => {
 
                       {/* Submenu for Products */}
                       {openSubmenu !== undefined &&
-                        openSubmenu === subItem.type && products[subItem.type].length > 0 && (
+                        openSubmenu === subItem.type &&
+                        products[subItem.type].length > 0 && (
                           <div className="absolute left-full top-0 w-64 bg-white shadow-md rounded-md p-3">
-                            { products[subItem.type]
-                              .map((product) => (
-                                <p
-                                  key={product._id}
-                                  onClick={() => handleProductClick(product)}
-                                  className="block px-4 py-2 text-black hover:bg-gray-100 cursor-pointer"
-                                >
-                                  {product.brand}
-                                </p>
-                              ))}
+                            {products[subItem.type].map((product) => (
+                              <p
+                                key={product._id}
+                                onClick={() => handleProductClick(product)}
+                                className="block px-4 py-2 text-black hover:bg-gray-100 cursor-pointer"
+                              >
+                                {product.brand}
+                              </p>
+                            ))}
                           </div>
                         )}
                     </div>

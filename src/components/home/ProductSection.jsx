@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import ProductSearch from "../ProductSearch";
 import OurProductCard from "../cards/OurProductCard";
+import ProductSearch from "../ProductSearch";
 
 const ProductSection = ({ products }) => {
   const [search, setSearch] = useState("");

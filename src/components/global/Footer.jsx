@@ -11,7 +11,7 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Our Products", path: "/products" },
+    { name: "Our Products", path: "/our-products" },
     { name: "Career", path: "/career" },
     { name: "Investor", path: "/investor" },
     { name: "Gallery", path: "/gallery/visual-ads" },
@@ -22,7 +22,7 @@ const Footer = () => {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Our Vision", path: "/about" },
-    { name: "Our Product", path: "/products" },
+    { name: "Our Product", path: "/our-products" },
     { name: "CSR", path: "/about" },
     { name: "Contact Us", path: "/contact" },
   ];

@@ -37,7 +37,7 @@ const renderPageNumbers = (pagination) => {
   return pages.map((pageNumber) => (
     <Link
       key={pageNumber}
-      href={`/products?page=${pageNumber}`}
+      href={`/our-products?page=${pageNumber}`}
       className={`px-4 py-2 mx-1 rounded ${
         pageNumber === pagination.currentPage
           ? "bg-defined-blue text-white"
@@ -79,7 +79,7 @@ export default async function GalleryPage({ params }) {
 
       <div className="flex justify-center items-center my-4">
         <Link
-          href={`/products?page=${pageData.currentPage - 1}`}
+          href={`/our-products?page=${pageData.currentPage - 1}`}
           className={`px-4 py-2 mx-1 rounded text-defined-blue font-medium ${
             pageData.currentPage === 1 ? "pointer-events-none opacity-50" : ""
           }`}
@@ -90,7 +90,7 @@ export default async function GalleryPage({ params }) {
         {renderPageNumbers(pageData)}
 
         <Link
-          href={`/products?page=${pageData.currentPage + 1}`}
+          href={`/our-products?page=${pageData.currentPage + 1}`}
           className={`px-4 py-2 mx-1 rounded text-defined-blue font-medium ${
             pageData.currentPage === pageData.totalPages
               ? "pointer-events-none opacity-50"

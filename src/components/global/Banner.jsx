@@ -12,7 +12,7 @@ const Banner = () => {
     "/career": "Career",
     "/investor": "Investor",
     "/gallery": "Gallery",
-    "/products": "Our Products",
+    "/our-products": "Our Products",
   };
 
   const mfgTitles = {
@@ -38,7 +38,7 @@ const Banner = () => {
     title = galleryTitles[id] || "Gallery";
   }
 
-  if (pathname.startsWith("/products/")) {
+  if (pathname.startsWith("/our-products/")) {
     title = "Our Products";
   }
 

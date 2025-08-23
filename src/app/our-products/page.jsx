@@ -24,7 +24,7 @@ const renderPageNumbers = (pagination) => {
   return pages.map((pageNumber) => (
     <Link
       key={pageNumber}
-      href={`/products?page=${pageNumber}`}
+      href={`/our-products?page=${pageNumber}`}
       className={`px-4 py-2 mx-1 rounded ${
         pageNumber === pagination.currentPage
           ? "bg-defined-blue text-white"
@@ -46,7 +46,7 @@ export default async function Products({ searchParams }) {
       <ProductPageSection products={products} />
       <div className="flex justify-center items-center my-4">
         <Link
-          href={`/products?page=${pageData.currentPage - 1}`}
+          href={`/our-products?page=${pageData.currentPage - 1}`}
           className={`px-4 py-2 mx-1 rounded text-defined-blue font-medium ${
             pageData.currentPage === 1 ? "pointer-events-none opacity-50" : ""
           }`}
@@ -57,7 +57,7 @@ export default async function Products({ searchParams }) {
         {renderPageNumbers(pageData)}
 
         <Link
-          href={`/products?page=${pageData.currentPage + 1}`}
+          href={`/our-products?page=${pageData.currentPage + 1}`}
           className={`px-4 py-2 mx-1 rounded text-defined-blue font-medium ${
             pageData.currentPage === pageData.totalPages
               ? "pointer-events-none opacity-50"
@@ -79,21 +79,21 @@ async function getData(page = 1) {
     const categories = category.map((cat) => cat.category);
     const res1 = await axios.get(`${process.env.API_URL}/product?page=${page}`);
     const pageData = res1.data.pagination;
-     async function getProducts() {
-     const result = {};
+    async function getProducts() {
+      const result = {};
 
-     for (const cat of categories) {
-       const response = await axios.get(
-         `${process.env.API_URL}/product?category=${cat}&limit=6`
-       );
+      for (const cat of categories) {
+        const response = await axios.get(
+          `${process.env.API_URL}/product?category=${cat}&limit=6`
+        );
 
-       result[cat] = response.data.data;
-     }
+        result[cat] = response.data.data;
+      }
 
-     return result;
-   }
+      return result;
+    }
 
-    const data = await getProducts()
+    const data = await getProducts();
     return {
       products: data,
       pageData,

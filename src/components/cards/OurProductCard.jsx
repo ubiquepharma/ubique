@@ -11,7 +11,7 @@ const OurProductCard = ({ product }) => {
   const router = useRouter();
   const handleViewMore = () => {
     sessionStorage.setItem("selectedProduct", JSON.stringify(product));
-    router.push(`/products/${product.productId}`);
+    router.push(`/our-products/${product.productId}`);
   };
 
   const toggleBookingModal = (productName) => {
