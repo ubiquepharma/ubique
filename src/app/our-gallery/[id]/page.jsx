@@ -1,4 +1,5 @@
 import Banner from "@/components/global/Banner";
+import ImagePreviewModal from "@/components/ui/ImagePreviewModal";
 import MainTemplate from "@/templates/MainTemplate";
 import axios from "axios";
 import Image from "next/image";
@@ -63,18 +64,7 @@ export default async function GalleryPage({ params }) {
           </h1>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
-          {images.map((item) => (
-            <Image
-              key={item._id}
-              src={item.image.secure_url}
-              alt={id}
-              width={500}
-              height={500}
-              className="rounded-xs aspect-square object-cover"
-            />
-          ))}
-        </div>
+        <ImagePreviewModal images={images} />
       )}
 
       <div className="flex justify-center items-center my-4">

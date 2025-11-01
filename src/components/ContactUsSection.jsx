@@ -102,7 +102,7 @@ const ContactUsSection = () => {
                   <IoLocationSharp className="text-defined-orange text-xl" />
                   <span>
                     Solanipuram, Civil Line, Roorkee-247667 (UK) India <br />{" "}
-                    RO: Papiva Para. Dabaram-II. Siliguri-734006. (WB) India
+                    RO: Papiya Para. Dabgram-II. Siliguri-734006. (WB) India
                   </span>
                 </div>
               </div>
