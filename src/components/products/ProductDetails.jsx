@@ -101,7 +101,7 @@ const ProductDetails = ({ product }) => {
                 </span>{" "}
                 / 1 piece(s)
               </p>
-              <p>{product?.moq} Piece(s) (MOQ)</p>
+              <p>{product?.moq} (MOQ)</p>
             </div>
 
             <div className="w-full h-full border flex flex-wrap">
