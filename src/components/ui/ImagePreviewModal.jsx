@@ -7,7 +7,8 @@ const ImagePreviewModal = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <>      
+    <>
+      {/* Image Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
         {images.map((item) => (
           <div
@@ -28,20 +29,24 @@ const ImagePreviewModal = ({ images }) => {
 
       {/* Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="relative max-w-3xl w-full">
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-4 -right-4 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200 transition"
-            >
-              <IoClose size={22} />
-            </button>
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          {/* Close Button */}
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-30 right-2 bg-white/80 text-black rounded-full p-2 shadow-md hover:bg-white transition z-50"
+          >
+            <IoClose size={26} />
+          </button>
+
+          {/* Image Container */}
+          <div className="relative w-full max-w-5xl max-h-[85vh] flex items-center justify-center">
             <Image
               src={selectedImage}
-              alt="Selected preview"
-              width={1000}
-              height={1000}
-              className="rounded-lg w-full h-auto max-h-[80vh] object-contain"
+              alt="Full preview"
+              width={1200}
+              height={1200}
+              className="rounded-xl w-auto h-auto max-w-[90vw] max-h-[75vh] object-contain"
+              priority
             />
           </div>
         </div>
