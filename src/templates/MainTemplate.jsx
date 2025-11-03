@@ -32,7 +32,7 @@ async function getData() {
     const res = await axios.get(`${process.env.API_URL}/category`);
 
     const category = res.data.data;
-    const categories = category.map((cat) => cat.category);
+    const categories = category?.map((cat) => cat.category);
 
    async function getProducts() {
      const result = {};

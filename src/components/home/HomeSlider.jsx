@@ -20,7 +20,7 @@ const HomeSlider = ({ sliders }) => {
       <div className="w-full h-auto">
         {Slider && (
           <Slider {...settings}>
-            {sliders.map((slide) => (
+            {sliders?.map((slide) => (
               <Image
                 src={slide.image.secure_url}
                 alt="slider"

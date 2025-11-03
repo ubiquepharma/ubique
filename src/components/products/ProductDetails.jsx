@@ -99,7 +99,6 @@ const ProductDetails = ({ product }) => {
                 <span className="text-defined-green font-bold">
                   ₹{product?.mrp}
                 </span>{" "}
-                / 1 piece(s)
               </p>
               <p>{product?.moq} (MOQ)</p>
             </div>
